@@ -1,0 +1,76 @@
+{
+  "name": "EcoSphere - Sustainability Hub",
+  "short_name": "EcoSphere",
+  "description": "Your sustainability hub. Learn about environmental protection, explore organizations making a difference, and discover how you can contribute to a sustainable future.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a1f0a",
+  "theme_color": "#52b788",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/icons/screenshot-narrow.svg",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": ["education", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "View Organizations",
+      "short_name": "Organizations",
+      "description": "Explore environmental organizations",
+      "url": "categories.html",
+      "icons": [
+        {
+          "src": "assets/icons/shortcut-organizations.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Submit Feedback",
+      "short_name": "Feedback",
+      "description": "Send us your thoughts and suggestions",
+      "url": "feedback.html",
+      "icons": [
+        {
+          "src": "assets/icons/shortcut-feedback.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Track Eco Tasks",
+      "short_name": "Tasks",
+      "description": "Complete daily sustainability tasks",
+      "url": "task.html",
+      "icons": [
+        {
+          "src": "assets/icons/shortcut-tasks.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}

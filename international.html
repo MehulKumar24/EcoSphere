@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#52b788">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="EcoSphere">
+    <meta name="description" content="Discover global sustainability organizations and international environmental initiatives. Explore UN bodies, NGOs, and worldwide conservation efforts.">
+    <title>International Organizations | EcoSphere</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/defs.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "International Sustainability Organizations",
+        "description": "Discover global organizations with international reach, making worldwide impact on sustainability and environmental protection.",
+        "url": "https://ecosphere-sustainability.com/international.html",
+        "areaServed": "Worldwide"
+      }
+    </script>
+
+    <script src="js/navigation.js" defer></script>
+    <script src="js/modals.js" defer></script>
+    <script src="js/search-filter.js" defer></script>
+    <script src="js/forms.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="navbar container">
+        <a href="index.html" class="brand">EcoSphere</a>
+        <button class="hamburger" id="hamburgerMenu" aria-label="Toggle navigation menu" aria-controls="primaryNavigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="primaryNavigation">
+          <a href="index.html">Home</a>
+          <a href="categories.html">Organizations</a>
+          <a href="case-study.html">Case Study</a>
+          <a href="heroes.html">Heroes</a>
+          <a href="task.html">My Tasks</a>
+          <a href="feedback.html">Feedback</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-content">
+          <h1>International Sustainability Organizations</h1>
+          <p>Discover leading global organizations driving environmental protection and sustainable development worldwide.</p>
+        </div>
+      </section>
+
+      <section class="cards-section org-list-section">
+        <div class="org-controls">
+          <div class="search-box">
+            <label class="sr-only" for="searchInput">Search international organizations</label>
+            <input type="text" id="searchInput" placeholder="Search organizations..." autocomplete="off">
+          </div>
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="ngo">NGO</button>
+          <button class="filter-btn" type="button" data-filter="un">UN Body</button>
+        </div>
+
+        <div class="info-grid">
+          <div class="org-card card" data-category="un" data-logo="UNEP" data-focus="Policy, Climate Change, Biodiversity" data-impact="Supports 193 countries; Annual budget above $500 million; Coordinates climate action globally" data-website="https://www.unep.org">
+            <div class="card-logo">UNEP</div>
+            <h3>United Nations Environment Programme (UNEP)</h3>
+            <p>Leading global authority on environmental issues. It coordinates environmental policy across member states and addresses climate change, biodiversity loss, and pollution while supporting sustainable development agendas.</p>
+          </div>
+
+          <div class="org-card card" data-category="un" data-logo="UNDP" data-focus="Sustainable Development, Climate Change, Poverty Reduction" data-impact="Works in 170+ countries; $5.4 billion annual budget; 5,000+ projects globally" data-website="https://www.undp.org">
+            <div class="card-logo">UNDP</div>
+            <h3>United Nations Development Programme (UNDP)</h3>
+            <p>Global development organization connecting countries to knowledge, experience, and resources. It implements climate adaptation, renewable-energy, and sustainable-development projects that affect millions of people.</p>
+          </div>
+
+          <div class="org-card card" data-category="un" data-logo="IPCC" data-focus="Climate Research, Scientific Assessment, Climate Policy" data-impact="195 member countries; 10,000+ scientists; Guides global climate policy" data-website="https://www.ipcc.ch">
+            <div class="card-logo">IPCC</div>
+            <h3>Intergovernmental Panel on Climate Change (IPCC)</h3>
+            <p>Scientific body assessing climate change and its impacts. It synthesizes peer-reviewed research to provide governments with authoritative climate information that informs global policy.</p>
+          </div>
+
+          <div class="org-card card" data-category="ngo" data-logo="WWF" data-focus="Wildlife Protection, Forest Conservation, Marine Protection" data-impact="25 million supporters; Projects in 100+ countries; Protects 500+ million hectares" data-website="https://www.worldwildlife.org">
+            <div class="card-logo">WWF</div>
+            <h3>World Wide Fund for Nature (WWF)</h3>
+            <p>Global conservation organization with decades of impact. It works in more than 100 countries to protect endangered species, forests, oceans, and freshwater ecosystems through science-based initiatives.</p>
+          </div>
+
+          <div class="org-card card" data-category="ngo" data-logo="IUCN" data-focus="Biodiversity Conservation, Scientific Research, Policy Advocacy" data-impact="1,400+ member organizations; 16,000 experts; Influences species protection policies worldwide" data-website="https://www.iucn.org">
+            <div class="card-logo">IUCN</div>
+            <h3>International Union for Conservation of Nature (IUCN)</h3>
+            <p>Global union of governments, NGOs, and experts providing scientific expertise on biodiversity. It publishes the Red List of Threatened Species and influences conservation policy around the world.</p>
+          </div>
+
+          <div class="org-card card" data-category="ngo" data-logo="GP" data-focus="Climate Action, Ocean Protection, Renewable Energy" data-impact="3 million members globally; Campaigns in 40+ countries; Drives major policy changes" data-website="https://www.greenpeace.org">
+            <div class="card-logo">GP</div>
+            <h3>Greenpeace International</h3>
+            <p>Independent global campaign organization dedicated to environmental protection. It runs high-impact campaigns focused on climate change, ocean conservation, forest protection, and clean energy.</p>
+          </div>
+
+          <div class="org-card card" data-category="ngo" data-logo="CI" data-focus="Biodiversity Protection, Indigenous Rights, Climate" data-impact="Protects 150+ million hectares; Works with 1,500+ indigenous communities; Active in 15+ countries" data-website="https://www.conservation.org">
+            <div class="card-logo">CI</div>
+            <h3>Conservation International</h3>
+            <p>Organization protecting Earth's biodiversity hotspots. It partners with indigenous communities and governments to safeguard forests, marine ecosystems, and sustainable livelihoods in critical regions.</p>
+          </div>
+
+          <div class="org-card card" data-category="ngo" data-logo="BL" data-focus="Bird Conservation, Habitat Protection, Climate Action" data-impact="Network in 120+ countries; Protects 1,500+ bird species; Manages 1,000+ protected areas" data-website="https://www.birdlife.org">
+            <div class="card-logo">BL</div>
+            <h3>BirdLife International</h3>
+            <p>Global partnership of conservation organizations focused on avian conservation. It manages protected areas, conducts research on threatened bird species, and advocates for biodiversity protection policies worldwide.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Join the Global Sustainability Movement</h2>
+        <p>Discover how you can participate in international conservation efforts and support global environmental initiatives.</p>
+        <a href="feedback.html" class="btn-secondary">Get Involved Today</a>
+      </section>
+    </main>
+
+    <div id="orgModal" class="modal">
+      <div class="modal-content">
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+
+        <div class="footer-section">
+          <h3 class="footer-brand">EcoSphere</h3>
+          <p class="footer-slogan">"Sustainability is not a choice, it's a responsibility."</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="categories.html">Organizations</a>
+          <a href="case-study.html">Case Studies</a>
+          <a href="heroes.html">Eco Heroes</a>
+          <a href="task.html">My Tasks</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="license.html">License</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <a href="feedback.html">Feedback & Views</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>App</h4>
+          <button id="installToHomeBtn" type="button" class="footer-link-btn">📱 Add to Home Screen</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 EcoSphere. All rights reserved.
+      </div>
+      <p class="result-counter" style="margin-top: 10px; font-size: 0.7rem; opacity: 0.6; text-align: center;">Last Updated: APRIL 2026</p>
+    </footer>
+    <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+  </body>
+</html>

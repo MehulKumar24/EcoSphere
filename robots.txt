@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ecosphere-sustainability.com/sitemap.xml
+
+# Cache optimization
+Crawl-delay: 1
+Request-rate: 30/1m

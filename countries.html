@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#52b788">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="EcoSphere">
+    <meta name="description" content="Explore sustainability organizations across countries including the USA, UK, and Australia. Discover how nations are addressing environmental challenges.">
+    <title>Global Organizations | EcoSphere</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/defs.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Organizations by Country",
+        "description": "Browse organizations by country, learning about sustainability efforts across the globe.",
+        "url": "https://ecosphere-sustainability.com/countries.html"
+      }
+    </script>
+
+    <script src="js/navigation.js" defer></script>
+    <script src="js/modals.js" defer></script>
+    <script src="js/search-filter.js" defer></script>
+    <script src="js/forms.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="navbar container">
+        <a href="index.html" class="brand">EcoSphere</a>
+        <button class="hamburger" id="hamburgerMenu" aria-label="Toggle navigation menu" aria-controls="primaryNavigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="primaryNavigation">
+          <a href="index.html">Home</a>
+          <a href="categories.html">Organizations</a>
+          <a href="case-study.html">Case Study</a>
+          <a href="heroes.html">Heroes</a>
+          <a href="task.html">My Tasks</a>
+          <a href="feedback.html">Feedback</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Sustainability Organizations by Country</h1>
+          <p>Explore environmental organizations from the United States, United Kingdom, Australia, and other nations driving sustainability worldwide.</p>
+        </div>
+      </section>
+
+      <section class="cards-section org-list-section">
+        <div class="org-controls">
+          <div class="search-box">
+            <label class="sr-only" for="searchInput">Search global organizations by country</label>
+            <input type="text" id="searchInput" placeholder="Search organizations..." autocomplete="off">
+          </div>
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="usa">USA</button>
+          <button class="filter-btn" type="button" data-filter="uk">UK</button>
+          <button class="filter-btn" type="button" data-filter="australia">Australia</button>
+        </div>
+
+        <div class="info-grid">
+          <div class="org-card card" data-category="usa" data-logo="EPA" data-focus="Environmental Protection, Clean Air and Water, Pollution Control" data-impact="Manages 54,000+ employees; Enforces 15+ environmental laws; Protects 330 million Americans" data-website="https://www.epa.gov">
+            <div class="card-logo">EPA</div>
+            <h3>Environmental Protection Agency (EPA)</h3>
+            <p>United States federal agency responsible for environmental protection. It develops environmental policies, enforces pollution control laws, and manages air quality, water quality, and hazardous waste programs nationwide.</p>
+          </div>
+
+          <div class="org-card card" data-category="usa" data-logo="NOAA" data-focus="Ocean Protection, Marine Conservation, Weather" data-impact="25 research institutes; 13,600 employees; Manages 1.7 billion acres of marine sanctuary" data-website="https://www.noaa.gov">
+            <div class="card-logo">NOAA</div>
+            <h3>National Oceanic & Atmospheric Administration (NOAA)</h3>
+            <p>U.S. agency responsible for ocean and atmospheric science. It manages marine sanctuaries, conducts climate research, monitors ocean health, and coordinates national climate adaptation strategies.</p>
+          </div>
+
+          <div class="org-card card" data-category="usa" data-logo="USFWS" data-focus="Wildlife Conservation, Protected Species, Habitat Management" data-impact="600 national wildlife refuges; 25,000 employees; Protects 10,000+ species" data-website="https://www.fws.gov">
+            <div class="card-logo">USFWS</div>
+            <h3>United States Fish & Wildlife Service (USFWS)</h3>
+            <p>Federal service dedicated to wildlife conservation. It manages national wildlife refuges, protects endangered species, restores habitats, and implements conservation programs across the United States.</p>
+          </div>
+
+          <div class="org-card card" data-category="uk" data-logo="EA" data-focus="Environmental Regulation, Water Management, Flood Defense" data-impact="10,000+ employees; Manages 2,200+ km of flood defenses; Protects 80% of the UK's population" data-website="https://www.gov.uk/government/organisations/environment-agency">
+            <div class="card-logo">EA</div>
+            <h3>Environment Agency (United Kingdom)</h3>
+            <p>UK government agency responsible for environmental protection and flood defense. It regulates waste, water, and air quality while coordinating climate adaptation across England and Wales.</p>
+          </div>
+
+          <div class="org-card card" data-category="uk" data-logo="NE" data-focus="Nature Conservation, Protected Sites, Biodiversity" data-impact="Manages 3,600 protected sites; 2,000+ employees; Protects 25% of England's land" data-website="https://www.gov.uk/government/organisations/natural-england">
+            <div class="card-logo">NE</div>
+            <h3>Natural England</h3>
+            <p>Government agency dedicated to nature conservation in England. It manages protected sites, protects habitats, advises on biodiversity, and coordinates species-recovery programs nationwide.</p>
+          </div>
+
+          <div class="org-card card" data-category="uk" data-logo="RSPB" data-focus="Bird Conservation, Habitat Protection, Community Engagement" data-impact="1 million members; 230+ nature reserves; Protects 500+ bird species" data-website="https://www.rspb.org.uk">
+            <div class="card-logo">RSPB</div>
+            <h3>Royal Society for the Protection of Birds (RSPB)</h3>
+            <p>UK's largest wildlife conservation organization focused on avian protection. It manages nature reserves, conducts bird research, and runs community engagement programs across the United Kingdom.</p>
+          </div>
+
+          <div class="org-card card" data-category="australia" data-logo="DCCEEW" data-focus="Climate Change, Renewable Energy, Emissions Reduction" data-impact="Manages 50+ climate programs; Budget above $20 billion; Coordinates national climate policy" data-website="https://www.dcceew.gov.au">
+            <div class="card-logo">DCCEEW</div>
+            <h3>Department of Climate Change, Energy & Environment (Australia)</h3>
+            <p>Australian government department responsible for climate policy and environmental protection. It implements carbon-reduction strategies, manages renewable-energy programs, and coordinates national sustainability initiatives.</p>
+          </div>
+
+          <div class="org-card card" data-category="australia" data-logo="CSIRO" data-focus="Scientific Research, Climate Science, Environmental Solutions" data-impact="10,000+ scientists; 1,000+ research projects; 10+ research divisions" data-website="https://www.csiro.au">
+            <div class="card-logo">CSIRO</div>
+            <h3>Commonwealth Scientific and Industrial Research Organisation (CSIRO)</h3>
+            <p>Australia's national science agency conducting environmental research. It focuses on climate science, sustainable agriculture, marine conservation, and environmental solutions affecting millions.</p>
+          </div>
+
+          <div class="org-card card" data-category="australia" data-logo="GBRMPA" data-focus="Marine Conservation, Coral Reef Protection, Ocean Health" data-impact="Manages 348,000 square km of reef area; 400+ coral species; 1,500+ fish species protected" data-website="https://www.gbrmpa.gov.au">
+            <div class="card-logo">GBRMPA</div>
+            <h3>Great Barrier Reef Marine Park Authority</h3>
+            <p>Authority dedicated to protecting the Great Barrier Reef. It manages the world's largest coral reef system, conducts coral research, monitors reef health, and implements marine conservation strategies.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Explore Global Environmental Leaders</h2>
+        <p>Discover how different nations and organizations are addressing environmental challenges and building sustainable futures.</p>
+        <a href="case-study.html" class="btn-secondary">View Success Stories</a>
+      </section>
+    </main>
+
+    <div id="orgModal" class="modal">
+      <div class="modal-content">
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+
+        <div class="footer-section">
+          <h3 class="footer-brand">EcoSphere</h3>
+          <p class="footer-slogan">"Sustainability is not a choice, it's a responsibility."</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="categories.html">Organizations</a>
+          <a href="case-study.html">Case Studies</a>
+          <a href="heroes.html">Eco Heroes</a>
+          <a href="task.html">My Tasks</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="license.html">License</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <a href="feedback.html">Feedback & Views</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>App</h4>
+          <button id="installToHomeBtn" type="button" class="footer-link-btn">📱 Add to Home Screen</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 EcoSphere. All rights reserved.
+      </div>
+      <p class="result-counter" style="margin-top: 10px; font-size: 0.7rem; opacity: 0.6; text-align: center;">Last Updated: APRIL 2026</p>
+    </footer>
+    <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+  </body>
+</html>

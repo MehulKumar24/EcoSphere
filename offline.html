@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#52b788">
+    <title>Offline | EcoSphere</title>
+    <link rel="stylesheet" href="css/defs.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+      .offline-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        text-align: center;
+        padding: 20px;
+      }
+      .offline-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a href="index.html" class="brand">EcoSphere</a>
+      </nav>
+    </header>
+
+    <main class="offline-container">
+      <div class="offline-icon">📡</div>
+      <h1>You're Currently Offline</h1>
+      <p>It looks like you don't have an internet connection right now. <br>
+        Some parts of EcoSphere are saved and still available, but this page isn't.</p>
+      <div style="margin-top: 30px;">
+        <a href="index.html" class="btn-primary">Go to Homepage</a>
+        <button onclick="window.location.reload()" class="btn-secondary" style="margin-left: 10px;">Try Again</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-bottom">&copy; 2026 EcoSphere. Sustainability continues offline.</div>
+      <p class="result-counter" style="margin-top: 10px; font-size: 0.7rem; opacity: 0.6; text-align: center;">Last Updated: APRIL 2026</p>
+    </footer>
+  </body>
+</html>
