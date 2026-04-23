@@ -67,20 +67,21 @@ A comprehensive, high-performance, progressive web app (PWA) for sustainability 
 ### Frontend
 - **HTML5**: Semantic markup with JSON-LD structured data
 - **CSS3**: Modular architecture (5 files, 50+ CSS variables)
-- **JavaScript (ES6+)**: Vanilla JS (no dependencies), modular (5 files)
+- **JavaScript (ES6+)**: Vanilla JS (no dependencies), modular (5 page scripts + 1 worker script)
 - **Service Worker**: Offline support and caching
 - **Web App Manifest**: PWA configuration
 
 ### Performance
-- **Bundle Size**: ~163 KB (uncompressed) â†’ ~45 KB (gzipped) = 72% reduction
+- **Bundle Size**: ~210 KB (uncompressed) â†’ ~60 KB (gzipped) = 71% reduction
 - **Core Web Vitals**: LCP < 2.5s, FID < 100ms, CLS < 0.1
 - **Lighthouse Score**: Target 90+ on all metrics
 - **Load Time**: ~1.5s on 3G, ~0.5s on repeat visits
 
 ### Architecture
 - **Modular CSS**: defs.css, base.css, components.css, layout.css, pages.css
-- **Modular JS**: navigation.js, modals.js, search-filter.js, forms.js, main.js
+- **Modular JS**: navigation.js, modals.js, search-filter.js, forms.js, main.js, service-worker.js
 - **Feature Modules**: Each file handles specific functionality
+- **Service Worker Layout**: Root `service-worker.js` keeps full-site scope and loads `js/service-worker.js`
 - **No Build Step**: Pure HTML/CSS/JS (can be enhanced with build tools if needed)
 
 ---
@@ -142,6 +143,7 @@ ecosphere/
 |- disclaimer.html
 |- license.html
 |- offline.html
+|- service-worker.js
 |- manifest.json
 |- robots.txt
 |- sitemap.xml
