@@ -1,7 +1,8 @@
-// modal helpers
+// Modal helpers for organization cards and progress popups.
 
 let lastFocusedElement = null;
 
+// Reuse one generic modal layout for custom popup content.
 window.showGenericModal = function (title, contentHtml) {
   const modal = document.getElementById('orgModal');
   const modalContent = modal ? modal.querySelector('.modal-content') : null;
@@ -36,6 +37,7 @@ window.showGenericModal = function (title, contentHtml) {
   closeButton.focus();
 };
 
+// Pick a simple emoji logo when a card only has short text data.
 function getEmojiLogo(title) {
   const input = (title || '').toLowerCase().trim();
 
@@ -176,6 +178,7 @@ function getEmojiLogo(title) {
   return '🌱';
 }
 
+// Build a small logo block that works for both cards and the modal.
 function renderOrgLogo(container, fallbackText) {
   container.replaceChildren();
   container.classList.remove('has-image');
@@ -200,6 +203,7 @@ function renderOrgLogo(container, fallbackText) {
   container.appendChild(logoContent);
 }
 
+// Connect organization cards to the shared modal.
 function initializeModals() {
   const modal = document.getElementById('orgModal');
 
@@ -249,6 +253,7 @@ function initializeModals() {
   });
 }
 
+// Keep keyboard focus inside the modal while it is open.
 function handleModalKeydown(event) {
   const modal = document.getElementById('orgModal');
 
@@ -290,6 +295,7 @@ function handleModalKeydown(event) {
   }
 }
 
+// Fill the modal with the clicked card details.
 function openModal(card) {
   const modal = document.getElementById('orgModal');
   const modalContent = modal ? modal.querySelector('.modal-content') : null;
@@ -388,6 +394,7 @@ function openModal(card) {
   closeButton.focus();
 }
 
+// Close the modal and send focus back to where it came from.
 function closeModal() {
   const modal = document.getElementById('orgModal');
 

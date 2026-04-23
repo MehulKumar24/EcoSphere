@@ -1,8 +1,10 @@
-// offline cache stuff
+// Offline cache setup for the site.
 
+// Cache names
 const CACHE_VERSION = 'ecosphere-v4';
 const RUNTIME_CACHE = 'ecosphere-runtime-v4';
 
+// Files we want available offline
 const ASSETS_TO_CACHE = [
   'index.html',
   'categories.html',
@@ -37,6 +39,7 @@ const ASSETS_TO_CACHE = [
   'assets/icons/screenshot-narrow.svg'
 ];
 
+// Save fresh network responses in the runtime cache.
 function updateRuntimeCache(request, response) {
   if (!response || response.status !== 200) {
     return;
@@ -47,6 +50,7 @@ function updateRuntimeCache(request, response) {
   });
 }
 
+// Cache the app shell when the worker is installed.
 self.addEventListener('install', function (event) {
   event.waitUntil(
     caches
@@ -63,6 +67,7 @@ self.addEventListener('install', function (event) {
   );
 });
 
+// Remove older cache versions when a new worker takes over.
 self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches
@@ -84,6 +89,7 @@ self.addEventListener('activate', function (event) {
   );
 });
 
+// Serve cached content first, then refresh in the background when possible.
 self.addEventListener('fetch', function (event) {
   const request = event.request;
   const url = new URL(request.url);
@@ -137,6 +143,7 @@ self.addEventListener('fetch', function (event) {
   );
 });
 
+// Allow the page to ask the waiting worker to activate right away.
 self.addEventListener('message', function (event) {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();

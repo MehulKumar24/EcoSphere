@@ -1,5 +1,6 @@
-// feedback form stuff
+// Feedback form helpers.
 
+// Validate the feedback form and keep the saved entries in local storage.
 function initializeFeedbackForm() {
   const form = document.querySelector('.feedback-form');
 
@@ -83,12 +84,7 @@ function initializeFeedbackForm() {
   });
 }
 
-async function syncFeedbackToServer(data) {
-  // maybe for later
-  debugLog('log', '[Future Server] Feedback payload ready for API:', data);
-  return Promise.resolve(true);
-}
-
+// Check one field and place a small inline error message when needed.
 function validateField(field) {
   const value = field.value.trim();
   const boxType = field.getAttribute('type');
@@ -140,6 +136,7 @@ function validateField(field) {
   return isValid;
 }
 
+// Show a short success or error message above the submit button.
 function setFeedbackStatus(statusElement, message, isError) {
   if (!statusElement) {
     return;

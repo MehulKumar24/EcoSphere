@@ -1,5 +1,6 @@
-// search and filter
+// Search and filter helpers for organization listing pages.
 
+// Wire up search input, filter buttons, and the extra helper actions.
 function initializeSearch() {
   const searchInput = document.getElementById('searchInput');
 
@@ -30,6 +31,7 @@ function initializeSearch() {
   const orgControls = document.querySelector('.org-controls');
 
   if (orgControls && !document.getElementById('clearFiltersBtn')) {
+    // A quick reset button makes it easy to get back to the full list.
     const clearButton = document.createElement('button');
     clearButton.id = 'clearFiltersBtn';
     clearButton.type = 'button';
@@ -59,6 +61,7 @@ function initializeSearch() {
   }
 
   if (orgControls && !document.getElementById('surpriseBtn')) {
+    // This picks one visible card and jumps the user to it.
     const surpriseButton = document.createElement('button');
     surpriseButton.id = 'surpriseBtn';
     surpriseButton.type = 'button';
@@ -99,6 +102,7 @@ function initializeSearch() {
   performSearch();
 }
 
+// Filter cards, count matches, and show a friendly empty state.
 function performSearch() {
   const input = document.getElementById('searchInput');
   const grid = document.querySelector('.info-grid');

@@ -1,5 +1,6 @@
-// simple nav helpers
+// Simple navigation helpers used across the site.
 
+// Smoothly scroll to sections for in-page anchor links.
 function initializeSmoothScroll() {
   const links = document.querySelectorAll('a[href^="#"]');
 
@@ -31,6 +32,7 @@ function initializeSmoothScroll() {
   });
 }
 
+// Highlight the current page inside the main nav.
 function setActiveNavigation() {
   const pathParts = window.location.pathname.split('/');
   const currentPageName = pathParts[pathParts.length - 1] || 'index.html';
@@ -44,6 +46,7 @@ function setActiveNavigation() {
   });
 }
 
+// Open and close the mobile menu.
 function initializeHamburgerMenu() {
   const hamburger = document.getElementById('hamburgerMenu');
   const menuBox = document.querySelector('.nav-links');
@@ -81,6 +84,7 @@ function initializeHamburgerMenu() {
   });
 }
 
+// Add a small shadow once the header is no longer at the top.
 function initializeHeaderScroll() {
   const header = document.querySelector('.site-header');
 
@@ -96,6 +100,7 @@ function initializeHeaderScroll() {
   window.addEventListener('scroll', updateHeaderState, { passive: true });
 }
 
+// Show a back-to-top button after the user scrolls down a bit.
 function initializeBackToTop() {
   const backToTopButton = document.getElementById('backToTop');
 

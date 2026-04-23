@@ -1,7 +1,8 @@
-// main app setup
+// Main app setup shared by the pages.
 
 let deferredPrompt = null;
 
+// Only print helper logs while working locally or in debug mode.
 const DEBUG_MODE =
   ['localhost', '127.0.0.1'].includes(window.location.hostname) ||
   window.location.search.includes('debug=true');
@@ -26,6 +27,7 @@ function logTime(label) {
   debugLog('log', label + ' at ' + Math.round(performance.now()) + 'ms');
 }
 
+// Install prompt helpers
 const INSTALL_STATE_KEY = 'ecosphere-installed';
 const ADD_TO_HOME_LABEL = '\uD83D\uDCF1 Add to Home Screen';
 const REMOVE_FROM_HOME_LABEL = '\uD83D\uDDD1\uFE0F Remove from Home Screen';
@@ -216,6 +218,7 @@ if (typeof installModeQuery.addEventListener === 'function') {
   installModeQuery.addListener(refreshInstallUi);
 }
 
+// Small performance marks used during page startup.
 const performanceMetrics = {
   navigationStart: performance.now(),
   markings: {}
@@ -225,6 +228,7 @@ function measurePerformance(label) {
   performanceMetrics.markings[label] = performance.now();
 }
 
+// Reveal cards and hero content once they enter the viewport.
 function initializeScrollAnimations() {
   if (!('IntersectionObserver' in window)) {
     return;
@@ -249,6 +253,7 @@ function initializeScrollAnimations() {
   });
 }
 
+// Build and manage the sustainability tracker on the task page.
 function initializeSustainabilityTracker() {
   const container = document.getElementById('ecoTracker');
 
@@ -304,6 +309,7 @@ function initializeSustainabilityTracker() {
     const levelKey = getLevelKey(levelName);
     const tasks = [];
 
+    // Each tier gets a long list of simple actions so users can keep progress going.
     for (let index = 0; index < 100; index += 1) {
       tasks.push({
         id: levelKey + '-' + (index + 1),
@@ -542,6 +548,7 @@ function initializeSustainabilityTracker() {
   renderTasks(data.currentLevel);
 }
 
+// Run the simple live counters shown on the home page.
 function startTreeCounter() {
   const treeCounter = document.getElementById('treeCounter');
   const plasticCounter = document.getElementById('plasticCounter');
@@ -603,6 +610,7 @@ function startTreeCounter() {
   }
 }
 
+// Keep placeholder social links friendly until real profiles are added.
 function initializeSocialPlaceholders() {
   const links = document.querySelectorAll('.social-link-future');
 
@@ -615,6 +623,7 @@ function initializeSocialPlaceholders() {
   });
 }
 
+// Reuse a simple share helper when a page wants native sharing.
 window.handleWebShare = async function (title, text, url) {
   if (navigator.share) {
     try {
@@ -633,6 +642,7 @@ function reportMetrics() {
   logTime('Page completely ready');
 }
 
+// Page boot sequence
 document.addEventListener('DOMContentLoaded', function () {
   function init(name, fn) {
     try {
@@ -676,6 +686,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(reportMetrics, 1000);
 });
 
+// Optional vitals logging while debugging page performance.
 function trackCoreWebVitals() {
   if (!window.PerformanceObserver) {
     return;
@@ -705,6 +716,7 @@ function trackCoreWebVitals() {
   } catch (error) {}
 }
 
+// Register the root worker so it can control the whole site, not just /js/.
 function registerServiceWorker() {
   if (!('serviceWorker' in navigator) || !window.isSecureContext) {
     return;
@@ -744,6 +756,7 @@ function registerServiceWorker() {
   });
 }
 
+// Show a small prompt when a fresh cached version is ready.
 function showUpdatePrompt() {
   if (document.getElementById('updateBanner')) {
     return;
@@ -780,6 +793,7 @@ function showUpdatePrompt() {
   }
 }
 
+// Let the user know the app is now available offline.
 function showUpdateNotification() {
   const notification = document.createElement('div');
   notification.className = 'pwa-notification';
