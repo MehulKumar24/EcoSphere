@@ -1,7 +1,7 @@
-/* main theme values */
+/* Main design tokens for the whole site. */
 
 :root {
-  /* colors */
+  /* Color palette */
   --color-primary: #52b788;
   --color-primary-light: #74c69d;
   --color-primary-dark: #40916c;
@@ -32,7 +32,7 @@
   --color-error: #fcebea;
   --color-error-text: #7f1d1d;
 
-  /* fonts */
+  /* Typography */
   --font-family: "Poppins", Arial, sans-serif;
   --font-display: "Montserrat", sans-serif;
   --font-size-xs: 12px;
@@ -54,7 +54,7 @@
   --line-height-tight: 1.2;
   --line-height-relaxed: 1.8;
 
-  /* spacing */
+  /* Spacing scale */
   --spacing-unit: 8px;
   --spacing-xs: calc(var(--spacing-unit) * 1);
   --spacing-sm: calc(var(--spacing-unit) * 2);
@@ -66,27 +66,27 @@
   --spacing-4xl: calc(var(--spacing-unit) * 10);
   --spacing-5xl: calc(var(--spacing-unit) * 11.25);
 
-  /* corners */
+  /* Corner radius */
   --border-radius-sm: 6px;
   --border-radius: 8px;
   --border-radius-lg: 12px;
   --border-radius-xl: 14px;
   --border-radius-full: 20px;
 
-  /* shadows */
+  /* Shadow scale */
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
 
-  /* motion */
+  /* Motion */
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.3s ease;
   --transition-slower: 0.4s ease;
 
-  /* layout */
+  /* Layout */
   --container-max-width: 1100px;
   --container-padding: 25px;
   --breakpoint-sm: 600px;

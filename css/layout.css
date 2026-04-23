@@ -1,4 +1,4 @@
-/* header, hero, footer */
+/* Header, hero, and footer layout */
 
 .site-header {
   position: sticky;
@@ -44,7 +44,7 @@
   color: var(--color-accent);
 }
 
-/* mobile nav button */
+/* Mobile nav button */
 
 .hamburger {
   z-index: 51;
@@ -130,7 +130,7 @@
   color: var(--color-accent);
 }
 
-/* back to top */
+/* Back to top button */
 
 #backToTop {
   position: fixed;
@@ -167,7 +167,7 @@
   outline-offset: 2px;
 }
 
-/* hero */
+/* Hero section */
 
 .hero {
   position: relative;
@@ -208,7 +208,7 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* page sections */
+/* Main page sections */
 
 .cards-section {
   padding: 80px 20px;
@@ -270,7 +270,7 @@
   margin-top: 30px;
 }
 
-/* footer */
+/* Footer */
 
 .footer {
   margin-top: auto;
@@ -368,7 +368,7 @@
   text-align: center;
 }
 
-/* policy + feedback pages */
+/* Policy and feedback pages */
 
 .policy-section {
   padding: var(--spacing-5xl) var(--spacing-lg);

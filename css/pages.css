@@ -1,5 +1,6 @@
-/* page-specific stuff */
+/* Page-specific sections */
 
+/* Home dashboard */
 .dashboard-section {
   padding: var(--spacing-xl) 0;
 }
@@ -52,16 +53,7 @@
   font-size: var(--font-size-sm);
 }
 
-.tracker-section {
-  padding: 60px 20px;
-}
-
-.tracker-card {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--spacing-xl);
-}
-
+/* Eco tracker */
 .tracker-header {
   display: flex;
   align-items: center;
@@ -137,15 +129,6 @@
   opacity: 1;
 }
 
-.view-all-link {
-  display: block;
-  margin-top: 15px;
-  color: var(--color-primary);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  text-decoration: none;
-}
-
 .task-list {
   max-height: 500px;
   margin-top: 15px;
@@ -205,10 +188,7 @@
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.counter-display.counter-pulse {
-  transform: scale(1.05);
-}
-
+/* Scroll reveal */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -236,7 +216,7 @@
   transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* analysis modal */
+/* Progress analysis modal */
 
 .analysis-modal-content {
   display: grid;
@@ -277,10 +257,12 @@
   border: 1.5px solid var(--color-accent);
 }
 
+/* Listing page spacing */
 .org-list-section {
   padding-top: 40px;
 }
 
+/* Responsive layout */
 @media (max-width: 1200px) {
   .info-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -409,6 +391,7 @@
   }
 }
 
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
