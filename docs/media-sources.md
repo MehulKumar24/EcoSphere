@@ -34,7 +34,7 @@ Organization popups use **Unicode emojis** for visual representation. Each organ
 
 ## Eco Heroes
 
-Hero photos are embedded from Wikimedia Commons / Wikipedia media associated with these pages:
+Hero photos are stored locally in `assets/images/heroes/`, with source references based on Wikimedia Commons / Wikipedia media associated with these pages:
 
 - Greta Thunberg: https://en.wikipedia.org/wiki/Greta_Thunberg
 - David Attenborough: https://en.wikipedia.org/wiki/David_Attenborough
@@ -67,7 +67,8 @@ Case-study images are embedded from Wikimedia Commons / Wikipedia media associat
 - Emoji set: Standard Unicode emoji library (no license required)
 
 ### Wikipedia Images (Heroes & Case Studies)
-- All images sourced from Wikipedia/Wikimedia Commons
+- Hero image files are stored locally in `assets/images/heroes/`
+- Case-study images are embedded from Wikipedia/Wikimedia Commons
 - Most content is available under Creative Commons licenses (CC-BY-SA, CC-BY, CC-0)
 - Each image on Wikimedia Commons page displays its specific license information
 - Recommended: Verify individual image licenses before republishing

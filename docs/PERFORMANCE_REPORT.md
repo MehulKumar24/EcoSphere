@@ -3,17 +3,17 @@
 ## ðŸ“Š Bundle Analysis
 
 ### File Sizes (Uncompressed)
-- **Total Size: ~163 KB**
-- HTML Pages: ~100 KB (12 files)
-- CSS Files: ~30 KB (5 files)
-- JavaScript: ~26 KB (5 files)
-- Config: ~7 KB (manifest + service worker)
+- **Total Size: ~210 KB**
+- HTML Pages: ~121 KB (14 files)
+- CSS Files: ~35 KB (5 files)
+- JavaScript: ~51 KB (6 files including the service worker code)
+- Manifest/metadata: ~2 KB
 
 ### Estimated Gzip Compression
-- CSS: ~30 KB â†’ ~7 KB (77% reduction)
-- JavaScript: ~26 KB â†’ ~8 KB (69% reduction)
-- HTML: ~100 KB â†’ ~30 KB (70% reduction)
-- **Total After Gzip: ~45 KB**
+- CSS: ~35 KB â†’ ~9 KB (about 75% reduction)
+- JavaScript: ~51 KB â†’ ~15 KB (about 71% reduction)
+- HTML: ~121 KB â†’ ~35 KB (about 70% reduction)
+- **Total After Gzip: ~60 KB**
 
 ---
 
@@ -21,14 +21,14 @@
 
 ### 1. **Modular CSS/JS Architecture**
 - âœ… 5 modular CSS files (organized by concern)
-- âœ… 5 modular JS files (organized by feature)
+- âœ… 5 page scripts plus 1 service worker script
 - âœ… Lazy loading for images (loading="lazy")
 - âœ… Async script loading with defer attribute
 - â±ï¸ **Impact**: Reduces initial load time by 15-20%
 
 ### 2. **Service Worker & Caching**
 - âœ… Stale While Revalidate strategy
-- âœ… 21 critical assets cached on install
+- âœ… 31 core assets cached on install
 - âœ… Automatic background updates every 60s
 - â±ï¸ **Impact**: 2nd visit loads 80% faster
 
@@ -102,7 +102,7 @@ Already implemented with:
 
 ### 6. **JavaScript Code Splitting**
 Consider splitting initialization based on page needs.
-Current: All 5 JS files load on every page
+Current: All 5 page scripts load on every page, and the service worker is registered site-wide
 Recommended: Load only required modules per page
 
 ---
@@ -151,7 +151,7 @@ Recommended: Load only required modules per page
 
 ## Performance Checklist
 
-- âœ… Modular CSS/JS (5 files each)
+- âœ… Modular CSS (5 files) and JavaScript (5 page scripts + 1 worker script)
 - âœ… Critical rendering path optimized
 - âœ… Service Worker caching
 - âœ… Lazy loading images
@@ -175,7 +175,7 @@ Recommended: Load only required modules per page
 ### On First Load (Cold Cache)
 - Time to First Contentful Paint (FCP): ~1.2s
 - Time to Interactive (TTI): ~2.1s
-- Total Pages Size: ~163 KB uncompressed, ~45 KB gzipped
+- Total Pages Size: ~210 KB uncompressed, ~60 KB gzipped
 
 ### On Repeat Loads (Warm Cache)
 - FCP: ~0.3s (90% improvement)
@@ -221,6 +221,6 @@ Recommended: Load only required modules per page
 
 ---
 
-Generated: April 13, 2026
+Generated: April 23, 2026
 Project: EcoSphere Sustainability Hub
 

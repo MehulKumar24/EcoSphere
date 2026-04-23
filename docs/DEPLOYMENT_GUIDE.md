@@ -5,7 +5,7 @@
 ### Code Quality
 - [x] All HTML validated (W3C standards)
 - [x] CSS organized into 5 modular files
-- [x] JavaScript modularized into 5 files
+- [x] JavaScript organized into 5 page scripts plus 1 worker script
 - [x] No console errors or warnings
 - [x] Service worker functional
 - [x] Manifest valid and configured
@@ -58,6 +58,7 @@ Keep the same public file layout:
 
 ./
 |- *.html
+|- service-worker.js
 |- manifest.json
 |- robots.txt
 |- sitemap.xml
@@ -66,6 +67,8 @@ Keep the same public file layout:
 |- js/
 `- assets/
 ```
+
+Keep the root `service-worker.js` in place. It acts as the public entry point so the worker can control the whole site, while the main cache logic stays in `js/service-worker.js`.
 
 The `docs/` and `config/` folders are just project references. They do not need to be served as part of the main website.
 
@@ -169,20 +172,20 @@ sudo systemctl restart apache2
 
 ### Before Optimization
 - Initial Load: ~3.5s
-- JS Bundle: 26 KB
-- CSS Bundle: 30 KB
-- Total Size: 163 KB
+- JS Bundle: ~50 KB
+- CSS Bundle: ~35 KB
+- Total Size: ~210 KB
 
 ### After Deployment (with compression)
 - Initial Load: ~1.5s (60% faster)
-- JS Bundle: ~8 KB (70% reduction)
-- CSS Bundle: ~7 KB (77% reduction)
-- Total Size: ~45 KB (72% reduction)
+- JS Bundle: ~15 KB (about 71% reduction)
+- CSS Bundle: ~9 KB (about 75% reduction)
+- Total Size: ~60 KB (about 71% reduction)
 
 ### Repeat Visits (with service worker)
 - Load Time: ~0.5s (85% faster)
 - Network: ~2 KB (cache headers only)
-- Data Saved: ~43 KB per visit
+- Data Saved: ~58 KB per visit
 
 ---
 
@@ -277,6 +280,8 @@ https://www.ssllabs.com/ssltest/
 navigator.serviceWorker.getRegistrations()
   .then(regs => console.log('SW Registrations:', regs))
 ```
+
+Note: keep the public registration path pointed at `/service-worker.js`. That root file loads `js/service-worker.js` and preserves full-site scope.
 
 ### HTTPS Mixed Content Warning
 - Check all resource URLs (http â†’ https)
