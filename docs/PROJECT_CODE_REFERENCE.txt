@@ -1,0 +1,656 @@
+EcoSphere Project Code Reference
+================================
+
+Scope
+-----
+This file documents the current project structure for:
+- 14 HTML files
+- 5 CSS files
+- 7 JavaScript files
+- 1 JSON file
+- 1 XML file
+
+Files covered
+-------------
+HTML:
+- index.html
+- categories.html
+- india.html
+- international.html
+- countries.html
+- case-study.html
+- heroes.html
+- task.html
+- feedback.html
+- privacy.html
+- terms.html
+- disclaimer.html
+- license.html
+- offline.html
+
+CSS:
+- css/defs.css
+- css/base.css
+- css/layout.css
+- css/components.css
+- css/pages.css
+
+JavaScript:
+- service-worker.js
+- js/navigation.js
+- js/modals.js
+- js/search-filter.js
+- js/forms.js
+- js/main.js
+- js/service-worker.js
+
+Data files:
+- manifest.json
+- sitemap.xml
+
+Shared project patterns
+-----------------------
+- Most pages use the same shell: skip link, sticky header, nav, main content, footer, install button, and back-to-top button.
+- Most pages load the same shared styles: defs.css, base.css, components.css, layout.css, and pages.css.
+- Most pages also load the same shared scripts: navigation.js, modals.js, search-filter.js, forms.js, and main.js.
+- Organization listing pages use .org-card elements with data-category, data-logo, data-focus, data-impact, and data-website attributes.
+- User data is stored locally in localStorage. Important keys include:
+  - ecoTasks
+  - feedbackList
+  - ecoTrees
+  - ecoPlastic
+  - ecosphere-installed
+- The site is a PWA. manifest.json describes install behavior and js/service-worker.js provides offline caching.
+
+HTML tag glossary
+-----------------
+- <html>: Root document element. Wraps the entire page and sets the language with lang="en".
+- <head>: Stores metadata, linked assets, and page setup information.
+- <meta>: Defines document encoding, viewport, theme color, descriptions, social sharing metadata, and PWA hints.
+- <title>: Sets the browser tab title and search-result title text.
+- <link>: Connects external resources such as stylesheets, manifest.json, canonical URLs, preload, and prefetch assets.
+- <script>: Loads JavaScript files or embeds inline JSON-LD structured data.
+- <body>: Contains all visible page content.
+- <a>: Creates links for navigation, CTA buttons, skip links, legal links, and external references.
+- <header>: Wraps the top navigation area.
+- <nav>: Groups navigation links for primary nav, footer nav, legal nav, and social nav.
+- <main>: Marks the main page content for accessibility and structure.
+- <section>: Breaks content into large semantic blocks like hero, cards, policy, and CTA sections.
+- <div>: Generic layout container used throughout the project.
+- <h1>: Primary page title.
+- <h2>: Section heading, CTA heading, or policy subsection heading.
+- <h3>: Card title, footer brand label, or content heading.
+- <h4>: Footer subsection heading.
+- <p>: Body copy, descriptions, helper text, and status text.
+- <span>: Small inline label, badge, icon text, or helper content.
+- <strong>: Adds semantic emphasis for important inline text.
+- <button>: Used for nav toggle, install button, filter buttons, modal close, form submit, share buttons, and retry actions.
+- <input>: Text and email inputs for search and forms.
+- <label>: Accessible label for form fields and search inputs.
+- <textarea>: Multi-line feedback input.
+- <form>: Wraps the feedback form.
+- <img>: Displays media cards and hero portraits.
+- <svg>: Inline vector graphic used for the home-page brand mark.
+- <rect>: Rectangle shape inside the inline SVG logo.
+- <path>: Path shape inside the inline SVG logo.
+- <circle>: Circle shape inside the inline SVG logo.
+- <ul>: Unordered list used in the license page.
+- <li>: List item used in the license page.
+- <style>: Inline CSS block used only in offline.html.
+- <br>: Forced line break used in offline.html.
+
+HTML file breakdown
+-------------------
+Most HTML pages reuse the same header, nav, footer, install button, and back-to-top button. The entries below focus on each file's purpose and page-specific code.
+
+1. index.html
+Purpose:
+- Main landing page and primary entry point for the site.
+Main structure:
+- Hero section
+- Live counters dashboard
+- Nine informational cards
+- Highlight quote
+- CTA section
+- Footer
+Interactive hooks:
+- #treeCounter
+- #plasticCounter
+- #installToHomeBtn
+- #backToTop
+Notable code:
+- Uses inline SVG for the brand icon.
+- Includes preload/prefetch links and inline JSON-LD Organization schema.
+- Loads all shared scripts.
+Tags:
+- <a>, <body>, <button>, <circle>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <link>, <main>, <meta>, <nav>, <p>, <path>, <rect>, <script>, <section>, <span>, <strong>, <svg>, <title>
+
+2. categories.html
+Purpose:
+- Region chooser page for sustainability organization directories.
+Main structure:
+- Hero section
+- Three cards for India, International, and Countries
+- CTA button row linking to sub-pages
+- Footer
+Interactive hooks:
+- Shared nav/menu/install/back-to-top controls
+Notable code:
+- Includes inline JSON-LD WebPage schema.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>
+
+3. india.html
+Purpose:
+- Searchable and filterable directory of Indian sustainability organizations.
+Main structure:
+- Hero section
+- Search box
+- Filter buttons for all / government / NGO
+- Organization card grid
+- CTA section
+- Shared modal
+- Footer
+Interactive hooks:
+- #searchInput
+- .filter-btn
+- .org-card
+- #orgModal
+- #installToHomeBtn
+- #backToTop
+Notable code:
+- Every organization card stores modal data and filter data in data-* attributes.
+- Modal content is built dynamically by js/modals.js.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <input>, <label>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>
+
+4. international.html
+Purpose:
+- Searchable and filterable directory of international sustainability organizations.
+Main structure:
+- Hero section
+- Search box
+- Filter buttons for all / NGO / UN Body
+- Organization card grid
+- CTA section
+- Shared modal
+- Footer
+Interactive hooks:
+- #searchInput
+- .filter-btn
+- .org-card
+- #orgModal
+- #installToHomeBtn
+- #backToTop
+Notable code:
+- Uses data-category values such as ngo and un.
+- Modal details come from the card data attributes.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <input>, <label>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>
+
+5. countries.html
+Purpose:
+- Searchable and filterable directory of organizations grouped by country.
+Main structure:
+- Hero section
+- Search box
+- Filter buttons for all / USA / UK / Australia
+- Organization card grid
+- CTA section
+- Shared modal
+- Footer
+Interactive hooks:
+- #searchInput
+- .filter-btn
+- .org-card
+- #orgModal
+- #installToHomeBtn
+- #backToTop
+Notable code:
+- Uses country-based data-category values.
+- Cards contain data-logo, data-focus, data-impact, and data-website for modal rendering.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <input>, <label>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>
+
+6. case-study.html
+Purpose:
+- Gallery of sustainability case studies with images and descriptions.
+Main structure:
+- Hero section
+- Media-card grid
+- CTA section
+- Footer
+Interactive hooks:
+- Shared nav/menu/install/back-to-top controls
+Notable code:
+- Uses external Wikimedia image URLs with loading="lazy", decoding="async", and referrerpolicy="no-referrer".
+- Content is static; no modal or filter UI on this page.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <img>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>
+
+7. heroes.html
+Purpose:
+- Profile gallery for environmental leaders and changemakers.
+Main structure:
+- Hero section
+- Hero card grid with local images
+- CTA section
+- Footer
+Interactive hooks:
+- .btn-share
+- #installToHomeBtn
+- #backToTop
+Notable code:
+- Share buttons carry data-share-title and data-share-text attributes.
+- window.handleWebShare exists in js/main.js, but there is no current click listener wired to .btn-share buttons.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <img>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>
+
+8. task.html
+Purpose:
+- Interactive sustainability tracker page.
+Main structure:
+- Hero section
+- Empty #ecoTracker container that JS fills at runtime
+- Shared modal
+- Footer
+Interactive hooks:
+- #ecoTracker
+- #orgModal
+- #installToHomeBtn
+- #backToTop
+Notable code:
+- The page markup is intentionally minimal because js/main.js generates the tracker UI, level buttons, tasks, and progress displays.
+- The modal is reused for progress analysis popups.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h3>, <h4>, <head>, <header>, <html>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>
+
+9. feedback.html
+Purpose:
+- User feedback page with client-side validation and local saving.
+Main structure:
+- Hero section
+- Feedback form panel
+- CTA section
+- Footer
+Interactive hooks:
+- .feedback-form
+- #fullName
+- #userEmail
+- #feedbackSubject
+- #feedbackMessage
+- [data-feedback-status]
+- #installToHomeBtn
+- #backToTop
+Notable code:
+- Form submits are intercepted by js/forms.js.
+- Data is stored in localStorage instead of being sent to a server.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <form>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <input>, <label>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <textarea>, <title>
+
+10. privacy.html
+Purpose:
+- Privacy policy page.
+Main structure:
+- Hero section
+- Policy copy section
+- CTA section linking to feedback
+- Footer
+Interactive hooks:
+- Shared nav/menu/install/back-to-top controls
+Notable code:
+- Mentions that localStorage is used to save task progress and feedback on the user's device.
+- Includes inline JSON-LD WebPage schema.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <strong>, <title>
+
+11. terms.html
+Purpose:
+- Terms and conditions page.
+Main structure:
+- Hero section
+- Policy copy section with numbered headings
+- CTA section linking to feedback
+- Footer
+Interactive hooks:
+- Shared nav/menu/install/back-to-top controls
+Notable code:
+- Static legal content only; shared scripts still load for common site behavior.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>
+
+12. disclaimer.html
+Purpose:
+- Disclaimer page.
+Main structure:
+- Hero section
+- Policy copy section
+- CTA section linking to feedback
+- Footer
+Interactive hooks:
+- Shared nav/menu/install/back-to-top controls
+Notable code:
+- Static legal content only; site-wide behavior comes from the shared scripts.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>
+
+13. license.html
+Purpose:
+- Licensing and permitted-use page.
+Main structure:
+- Hero section
+- Policy copy with unordered lists
+- CTA section linking to feedback
+- Footer
+Interactive hooks:
+- Shared nav/menu/install/back-to-top controls
+Notable code:
+- Uses <ul> and <li> for permitted-use items.
+- Contains an external Creative Commons link that opens in a new tab.
+Tags:
+- <a>, <body>, <button>, <div>, <footer>, <h1>, <h2>, <h3>, <h4>, <head>, <header>, <html>, <li>, <link>, <main>, <meta>, <nav>, <p>, <script>, <section>, <span>, <title>, <ul>
+
+14. offline.html
+Purpose:
+- Offline fallback document served when a page request fails and cached content is unavailable.
+Main structure:
+- Minimal header
+- Offline message area
+- Retry actions
+- Minimal footer
+Interactive hooks:
+- Inline button onclick="window.location.reload()"
+- Homepage link
+Notable code:
+- Only page with inline <style>.
+- Only page using <br>.
+- Does not load the shared JS bundle.
+- Returned by the service worker for failed document requests.
+Tags:
+- <a>, <body>, <br>, <button>, <div>, <footer>, <h1>, <head>, <header>, <html>, <link>, <main>, <meta>, <nav>, <p>, <style>, <title>
+
+CSS reference
+-------------
+Common CSS constructs used across the project
+- Custom properties: defined in :root and reused with var(...).
+- Layout systems: display: flex and display: grid are used heavily.
+- Pseudo-classes: :hover, :focus, :focus-visible, :active, :nth-child(), :first-child().
+- Pseudo-elements: ::selection, ::before, ::after, and custom scrollbar pseudo-elements.
+- Animations: @keyframes slideDown and slideUp.
+- Responsive design: @media rules for 1200px, 768px, 600px, and prefers-reduced-motion.
+- Utility/accessibility helpers: .skip-link, .sr-only, .modal-open, .container.
+
+1. css/defs.css
+Purpose:
+- Global design token file.
+Key selectors/code:
+- :root
+What it does:
+- Stores site-wide variables for colors, typography, spacing, radii, shadows, transitions, and layout widths.
+- Makes it easy to keep the visual language consistent across all pages.
+
+2. css/base.css
+Purpose:
+- Base reset and accessibility layer.
+Key selectors/code:
+- *
+- html
+- body
+- ::selection
+- .modal-open
+- a:focus, button:focus, input:focus, textarea:focus
+- .skip-link
+- .sr-only
+- .container
+What it does:
+- Applies box-sizing reset.
+- Enables smooth scroll.
+- Sets the default body layout, font, text color, and page background.
+- Provides keyboard focus outlines.
+- Hides skip link until focused.
+- Adds a screen-reader-only helper class.
+- Defines a shared max-width container.
+
+3. css/layout.css
+Purpose:
+- Site-level page layout and major section styling.
+Key selectors/code:
+- .site-header, .site-header.scrolled
+- .navbar
+- .brand
+- .hamburger and .hamburger.active span
+- .nav-links and .nav-links a
+- #backToTop and #backToTop.show
+- .hero and .hero-content
+- .cards-section
+- .info-grid
+- .highlight
+- .cta
+- .button-row
+- .footer, .footer-container, .footer-section, .footer-bottom
+- .policy-section, .policy-copy, .policy-heading, .policy-meta, .license-list, .feedback-panel
+What it does:
+- Creates the sticky frosted header and responsive nav.
+- Styles the hero background and typography.
+- Defines the main content section spacing and grid layout.
+- Styles the footer and legal/feedback shells.
+- Shows the floating back-to-top button when JS adds .show.
+
+4. css/components.css
+Purpose:
+- Reusable UI components and interaction styling.
+Key selectors/code:
+- .card and .card::before
+- .media-card, .hero-card, .card-media, .media-card-body
+- .badge
+- .org-card
+- .org-card .card-logo, .modal-content .org-logo
+- .org-logo-content, .org-logo-symbol, .org-logo-text
+- .btn-primary, .btn-secondary, .btn-share
+- .filter-btn and .filter-btn.active
+- .modal, .modal.show, .modal-content, .modal-close
+- .modal-link, .focus-tag
+- .org-controls, .search-box, .no-results, .result-counter
+- .feedback-form, .form-field, .input-field, .form-status, .error-message
+- .install-banner, .update-banner, .pwa-notification
+- @keyframes slideDown and slideUp
+What it does:
+- Styles cards, badges, media blocks, and organization logos.
+- Provides button styles for CTA, filters, share buttons, and PWA prompts.
+- Defines the modal shell used for organization details and progress reports.
+- Styles search input, form fields, validation states, and empty states.
+- Styles install/update banners and offline-ready notification toasts.
+
+5. css/pages.css
+Purpose:
+- Page-specific visuals, tracker UI, reveal animations, and responsive overrides.
+Key selectors/code:
+- .dashboard-section, .dashboard-grid, .live-data-card, .counter-display
+- .tracker-header, .level-selector, .level-btn, .level-message
+- .task-list, .tracker-item, .tracker-actions, .checkbox-mock
+- .reveal-on-scroll, .reveal-visible
+- .progress-container, .progress-bar
+- .analysis-modal-content, .analysis-info, .analysis-bar-bg, .analysis-bar-fill
+- .surprise-btn
+- .org-list-section
+- @media (max-width: 1200px)
+- @media (max-width: 768px)
+- @media (max-width: 600px)
+- @media (prefers-reduced-motion: reduce)
+What it does:
+- Styles the landing-page dashboard counters.
+- Styles the task tracker levels, progress bars, and checklist rows.
+- Adds scroll-reveal motion classes.
+- Provides the analysis modal progress bars.
+- Adds responsive nav, grid, modal, and layout behavior.
+- Disables most animation when the user prefers reduced motion.
+
+JavaScript reference
+--------------------
+Common JavaScript features used across the project
+- DOM APIs: querySelector, querySelectorAll, getElementById, closest, createElement, insertAdjacentHTML, replaceChildren.
+- Events: click, input, blur, submit, keydown, scroll, DOMContentLoaded, beforeinstallprompt, appinstalled, pageshow, focus, install, activate, fetch, message.
+- Browser storage: localStorage.
+- Browser services: navigator.serviceWorker, caches, matchMedia, navigator.share.
+- Performance/observers: IntersectionObserver, PerformanceObserver, performance.now().
+- Data helpers: FormData, JSON.parse, JSON.stringify.
+
+1. service-worker.js
+Purpose:
+- Root-level service worker entry file.
+Key code:
+- importScripts('./js/service-worker.js');
+What it does:
+- Keeps service worker scope at the project root.
+- Delegates the real cache logic to js/service-worker.js.
+
+2. js/navigation.js
+Purpose:
+- Shared navigation and scrolling behavior.
+Functions:
+- initializeSmoothScroll(): intercepts in-page anchor links and scrolls to the target with a fixed header offset.
+- setActiveNavigation(): highlights the current nav link and sets aria-current="page".
+- initializeHamburgerMenu(): toggles the mobile menu, closes it on link click, and closes it when clicking outside the navbar.
+- initializeHeaderScroll(): adds or removes the .scrolled class on the header after the user scrolls down.
+- initializeBackToTop(): shows the back-to-top button after 300px and scrolls to the top on click.
+
+3. js/modals.js
+Purpose:
+- Reusable modal system for organization cards and progress popups.
+Functions and state:
+- lastFocusedElement: stores the last focused element so focus can be restored after closing.
+- window.showGenericModal(title, contentHtml): generic modal renderer used by the tracker progress popups.
+- getEmojiLogo(title): maps an organization name or keyword to an emoji fallback logo.
+- renderOrgLogo(container, fallbackText): builds the logo block used in cards and modal headers.
+- initializeModals(): sets ARIA attributes, wires close behavior, decorates .org-card elements, and binds click/keyboard open handlers.
+- handleModalKeydown(event): handles Escape to close and Tab focus trapping.
+- openModal(card): reads a clicked card's data-* attributes and builds the modal content.
+- closeModal(): hides the modal, unlocks page scroll, and restores focus.
+What it does:
+- Turns static organization cards into accessible modal launchers.
+- Reuses the same modal shell for the task-page analysis popup.
+
+4. js/search-filter.js
+Purpose:
+- Search, filtering, result counting, and helper buttons for organization pages.
+Functions:
+- initializeSearch(): wires the search input and filter buttons, creates Clear Filters and Surprise Me buttons, and runs the first search.
+- performSearch(): filters .org-card elements based on search text and active category, updates the result counter, and shows or hides the no-results message.
+What it does:
+- Powers the interactive listing behavior on india.html, international.html, and countries.html.
+
+5. js/forms.js
+Purpose:
+- Feedback form validation and local saving.
+Functions:
+- initializeFeedbackForm(): attaches field validation events, validates on submit, stores feedback to localStorage, resets the form, and updates status text.
+- validateField(field): checks required fields and email formatting, adds ARIA metadata, and injects inline error messages.
+- setFeedbackStatus(statusElement, message, isError): shows a success or error message above the submit button.
+What it does:
+- Keeps feedback submission entirely client-side in the current version of the app.
+
+6. js/main.js
+Purpose:
+- Main application bootstrap, PWA install flow, tracker generation, live counters, and service worker registration.
+Important variables/constants:
+- deferredPrompt: stores the beforeinstallprompt event for later use.
+- DEBUG_MODE: enables console logging on localhost or with ?debug=true.
+- INSTALL_STATE_KEY: localStorage key for install state.
+- ADD_TO_HOME_LABEL and REMOVE_FROM_HOME_LABEL: button labels for install state.
+- performanceMetrics: simple in-memory performance markers.
+Install and PWA helper functions:
+- debugLog(method, ...args): guarded console logger for local debugging.
+- logTime(label): helper around performance.now().
+- isStandaloneMode(): checks if the app is running like an installed app.
+- isIndexPage(): checks whether the current page is the landing page.
+- getStoredInstallState(): reads install state from localStorage.
+- setStoredInstallState(isInstalled): saves install state.
+- isAppInstalled(): combines standalone-mode and stored install checks.
+- removeInstallBanner(): removes the bottom install banner if present.
+- setInstallButtonVisible(): updates the footer install button label.
+- refreshInstallUi(): syncs install UI with current state.
+- promptForInstall(): triggers the stored install prompt and updates state after the user's decision.
+- showInstallPrompt(): creates the install banner with Install and Dismiss buttons.
+- triggerInstall(): runs the install flow or shows a helpful alert if the app is already installed or the browser is not ready.
+Animation and page feature functions:
+- measurePerformance(label): stores a startup timing mark.
+- initializeScrollAnimations(): uses IntersectionObserver to add reveal-visible when cards enter view.
+- initializeSustainabilityTracker(): builds the task UI inside #ecoTracker, manages task completion, stores progress in localStorage, and opens analysis popups.
+- startTreeCounter(): animates and persists the landing-page counters for trees and recycled plastic.
+- initializeSocialPlaceholders(): blocks future social links and shows an alert explaining they are not active yet.
+- window.handleWebShare(title, text, url): wrapper around navigator.share with fallback alert.
+- reportMetrics(): logs readiness timing in debug mode.
+Boot and performance functions:
+- DOMContentLoaded handler: initializes shared features in a safe init() wrapper, registers the service worker, refreshes PWA UI, and starts feature modules.
+- trackCoreWebVitals(): uses PerformanceObserver to log LCP and first-input metrics while debugging.
+Service worker and update functions:
+- registerServiceWorker(): registers ./service-worker.js, polls for updates, watches updatefound, and listens for service worker messages.
+- showUpdatePrompt(): creates an update banner when a new service worker is installed.
+- showUpdateNotification(): shows a temporary notification that offline content is ready.
+What it does:
+- Acts as the main coordinator for nearly every interactive feature on the site.
+
+7. js/service-worker.js
+Purpose:
+- Offline caching and fetch handling for the PWA.
+Important constants:
+- CACHE_VERSION: versioned name for the app-shell cache.
+- RUNTIME_CACHE: versioned name for runtime network responses.
+- ASSETS_TO_CACHE: array of HTML, CSS, JS, manifest, and icon assets to cache during install.
+Functions and event handlers:
+- updateRuntimeCache(request, response): saves successful network responses in the runtime cache.
+- self.addEventListener('install', ...): opens the main cache, adds the app shell assets, and calls skipWaiting().
+- self.addEventListener('activate', ...): removes old cache versions and claims clients.
+- self.addEventListener('fetch', ...): serves cached responses first, refreshes in the background, caches fresh network responses, and falls back to offline.html for failed documents.
+- self.addEventListener('message', ...): allows SKIP_WAITING messages to activate a waiting worker immediately.
+What it does:
+- Makes the site available offline and keeps cached assets updated over time.
+
+JSON reference
+--------------
+manifest.json
+Purpose:
+- Web app manifest for installability and app-like behavior.
+Keys and meaning:
+- name: Full installable app name shown by the browser or OS.
+- short_name: Short label for home screen and launcher spaces.
+- description: Summary of the app for install surfaces.
+- start_url: Entry point after launch.
+- scope: URL range controlled by the installed app.
+- display: Uses standalone so the app opens without browser UI.
+- orientation: Locks preferred orientation to portrait-primary.
+- background_color: Splash/background color.
+- theme_color: Browser UI accent color.
+- icons[]: Install icons for 192x192 and 512x512 usage, including maskable support.
+- screenshots[]: App screenshot metadata for install UI.
+- categories[]: App categories for stores or install surfaces.
+- shortcuts[]: Quick actions linking to Organizations, Feedback, and Tasks.
+- prefer_related_applications: false, meaning the web app is preferred over suggesting native apps.
+What it does:
+- Tells the browser how EcoSphere should look and behave when installed as an app.
+
+XML reference
+-------------
+sitemap.xml
+Purpose:
+- Search engine sitemap for SEO and crawl guidance.
+Elements and meaning:
+- <urlset>: Root sitemap container with sitemap, image, and mobile namespaces.
+- <url>: One URL entry.
+- <loc>: Canonical URL of a page.
+- <lastmod>: Last modification date/time.
+- <changefreq>: Expected update frequency.
+- <priority>: Relative crawl priority.
+- <mobile:mobile/>: Marks the page as mobile-compatible.
+What it does:
+- Lists the public pages that should be indexed by search engines.
+- Includes the main landing page, organization pages, task page, feedback page, and legal pages.
+- Does not include offline.html, which is correct because that page is a fallback document rather than a normal discovery page.
+
+Important implementation notes
+------------------------------
+- Organization card modals are data-driven. The HTML cards provide the data and js/modals.js renders the popup.
+- The task page is mostly generated by JavaScript. task.html only provides the target container and modal shell.
+- Feedback is saved only on the user's device in localStorage in the current version.
+- The PWA install flow is implemented, but share buttons on heroes.html are not currently connected to the share helper.
+- The root service worker exists only to keep scope correct. The actual logic lives in js/service-worker.js.
